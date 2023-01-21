@@ -6,10 +6,10 @@ namespace FluentValidationApp.Web.FluentValidators
 {
     public class CustomerValidator:AbstractValidator<Customer>
     {
-        public string NotEmptyMessage { get; } = "{PropertyName} field cannot be boş";
+        public string NotEmptyMessage { get; } = "{PropertyName} field cannot be empty";
         public CustomerValidator()
         {
-            RuleFor(x => x.Name).NotEmpty().WithMessage("Boş");
+            RuleFor(x => x.Name).NotEmpty().WithMessage(NotEmptyMessage);
             RuleFor(x => x.Email).NotEmpty().WithMessage(NotEmptyMessage)
                 .EmailAddress().WithMessage("Email field must be in the correct format");
             RuleFor(x => x.Age).NotEmpty().WithMessage(NotEmptyMessage).InclusiveBetween(18, 60).WithMessage("Age field must be between 18 and 60 years old.");
