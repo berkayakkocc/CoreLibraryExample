@@ -15,6 +15,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.SuppressModelStateInvalidFilter = true;
 });
+builder.Services.AddAutoMapper(typeof(Program));
 //{
 //    options.RegisterValidatorsFromAssemblyContaining<Program>();
 //});

@@ -19,7 +19,7 @@ namespace FluentValidationApp.Web.FluentValidators
             }).WithMessage("You must be over 18 years old");
 
             RuleFor(x => x.Gender).IsInEnum().WithMessage("The {PropertyName} field must be Male=1,Female=2.");
-            RuleForEach(x => x.Addresses).SetValidator(new AddressValidator());
+            //RuleForEach(x => x.Addresses).SetValidator(new AddressValidator());
 
         }
     }
